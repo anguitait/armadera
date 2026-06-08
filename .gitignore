@@ -1,0 +1,8 @@
+# Material de origen (no se publica)
+web.archive.org/
+
+# macOS
+.DS_Store
+
+# Playwright artefactos
+.playwright-mcp/
