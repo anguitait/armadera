@@ -27,22 +27,31 @@ export function buildPreference(items, catalog, backBase) {
   };
 }
 
+function json(payload, status) {
+  return new Response(JSON.stringify(payload), {
+    status, headers: { 'Content-Type': 'application/json' },
+  });
+}
+
 export async function handler(req) {
+  // Validación del pedido: errores aquí son culpa del cliente (400).
+  let preferenceBody;
   try {
     const body = await req.json();
     const backBase = process.env.SITE_URL || new URL(req.url).origin;
-    const preferenceBody = buildPreference(body.items, products, backBase);
+    preferenceBody = buildPreference(body?.items, products, backBase);
+  } catch (err) {
+    return json({ error: err.message }, 400);
+  }
 
+  // Creación de la preferencia en Mercado Pago: errores aquí son del
+  // procesador (502). No exponemos el detalle interno del SDK al cliente.
+  try {
     const client = new MercadoPagoConfig({ accessToken: process.env.MP_ACCESS_TOKEN });
     const pref = await new Preference(client).create({ body: preferenceBody });
-
-    return new Response(JSON.stringify({ init_point: pref.init_point }), {
-      status: 200, headers: { 'Content-Type': 'application/json' },
-    });
-  } catch (err) {
-    return new Response(JSON.stringify({ error: err.message }), {
-      status: 400, headers: { 'Content-Type': 'application/json' },
-    });
+    return json({ init_point: pref.init_point }, 200);
+  } catch {
+    return json({ error: 'No se pudo iniciar el pago. Intenta nuevamente.' }, 502);
   }
 }
 
