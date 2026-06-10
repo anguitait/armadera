@@ -15,10 +15,6 @@
   <header id="site-header"></header>
   <main>
     <section class="hero">
-      <div class="shape sh1"><div class="tri"></div></div>
-      <div class="shape sh2"><div class="tri"></div></div>
-      <div class="shape sh3"><div class="dot"></div></div>
-      <div class="shape sh4"><div class="ring"></div></div>
       <div class="container">
         <h1>Nos haces feliz ver a los niños jugar felices</h1>
         <p>Juegos de madera fabricados en Villarrica que estimulan la coordinación, la motricidad y la creatividad. 100% biodegradables y amigables con el medioambiente.</p>
@@ -65,7 +61,8 @@
     import { mountLayout } from '/js/layout.js';
     import { renderHome } from '/js/render-home.js';
     import { mountCart } from '/js/cart-ui.js';
-    mountLayout(); renderHome(); mountCart();
+    import { mountHeroPieces } from '/js/hero-pieces.js';
+    mountLayout(); renderHome(); mountCart(); mountHeroPieces();
   </script>
 </body>
 </html>

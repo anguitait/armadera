@@ -129,20 +129,24 @@ img{ max-width:100%; display:block; }
 .cta .btn{ background:#fff; color:var(--teal-deep); }
 .cta .btn:hover{ background:var(--cream); }
 
-/* ---- Formas decorativas flotantes (marca) ---- */
-.hero{ position:relative; overflow:hidden; }
-.hero > *{ position:relative; z-index:1; }
-.shape{ position:absolute; z-index:0; pointer-events:none; opacity:.85; will-change:transform; }
-.tri{ width:0; height:0; border-style:solid; filter:drop-shadow(0 12px 20px rgba(120,90,40,.18)); }
-.sh1{ top:16%; left:7%;  animation:float1 9s ease-in-out infinite; }
-.sh1 .tri{ border-width:30px 0 30px 50px; border-color:transparent transparent transparent var(--teal); }
-.sh2{ bottom:18%; right:9%; animation:float2 11s ease-in-out infinite; }
-.sh2 .tri{ border-width:22px 38px 22px 0; border-color:transparent var(--yellow) transparent transparent; }
-.sh3{ top:24%; right:16%; animation:float3 8s ease-in-out infinite; }
-.sh3 .dot{ width:16px; height:16px; border-radius:5px; background:var(--wood); box-shadow:0 10px 16px rgba(120,90,40,.22); }
-.sh4{ bottom:22%; left:13%; animation:float2 10s ease-in-out infinite; }
-.sh4 .ring{ width:40px; height:40px; border:6px solid var(--teal-deep); border-radius:12px; opacity:.5; }
-@keyframes float1{ 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-22px) rotate(8deg)} }
-@keyframes float2{ 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(18px) rotate(-10deg)} }
-@keyframes float3{ 0%,100%{transform:translate(0,0) rotate(0)} 50%{transform:translate(-12px,16px) rotate(14deg)} }
-@media (prefers-reduced-motion: reduce){ .shape{ animation:none !important; } }
+/* ---- Piezas interactivas que se ensamblan (hero) ---- */
+.hero{ position:relative; overflow:hidden; min-height:clamp(440px, 72vh, 640px);
+  display:flex; flex-direction:column; justify-content:center; }
+.hero > .container{ position:relative; z-index:2; pointer-events:none; }
+.hero > .container .btn{ pointer-events:auto; }
+.pieces-layer{ position:absolute; inset:0; z-index:1; }
+.slot{ position:absolute; z-index:0; pointer-events:none; opacity:.5; transition:opacity .25s; }
+.slot.filled{ opacity:0; }
+.piece{ position:absolute; z-index:1; cursor:grab; touch-action:none;
+  filter:drop-shadow(0 10px 16px rgba(120,90,40,.22));
+  transition:left .18s ease, top .18s ease, filter .2s; }
+.piece.dragging{ cursor:grabbing; transition:none; filter:drop-shadow(0 16px 22px rgba(120,90,40,.35)); z-index:5; }
+.piece.placed{ cursor:default; }
+.pieces-reset{ position:absolute; z-index:3; bottom:1rem; right:1rem;
+  background:var(--paper); border:1px solid rgba(200,154,91,.4); color:var(--wood-deep);
+  font-family:inherit; font-size:.8rem; font-weight:500; padding:.4rem .85rem; border-radius:100px;
+  cursor:pointer; opacity:0; transform:translateY(6px); pointer-events:none;
+  transition:opacity .3s, transform .3s, background .2s; }
+.hero.armado .pieces-reset{ opacity:1; transform:none; pointer-events:auto; }
+.pieces-reset:hover{ background:var(--cream-deep); }
+@media (prefers-reduced-motion: reduce){ .piece{ transition:none; } }
