@@ -1,6 +1,6 @@
 // js/render-producto.js — pinta la ficha según ?slug=
 import { getProduct } from './products.js';
-const clp = n => '$' + n.toLocaleString('es-CL');
+import { clp } from './format.js';
 
 export function renderProducto() {
   const cont = document.getElementById('ficha');

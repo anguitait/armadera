@@ -2,9 +2,9 @@
 import { products, getProduct } from './products.js';
 import { createCart } from './cart.js';
 import { startCheckout } from './checkout.js';
+import { clp } from './format.js';
 
 const cart = createCart(window.localStorage);
-const clp = n => '$' + n.toLocaleString('es-CL');
 
 function ensurePanel() {
   if (document.getElementById('cart-panel')) return;
@@ -48,7 +48,9 @@ function render() {
   if (total) total.textContent = clp(cart.total(products));
   lines.querySelectorAll('[data-inc]').forEach(b => b.onclick = () => { cart.add(b.dataset.inc); render(); });
   lines.querySelectorAll('[data-dec]').forEach(b => b.onclick = () => {
-    const cur = cart.items().find(i => i.slug === b.dataset.dec); cart.setQty(b.dataset.dec, cur.qty - 1); render(); });
+    const cur = cart.items().find(i => i.slug === b.dataset.dec);
+    if (!cur) { render(); return; }
+    cart.setQty(b.dataset.dec, cur.qty - 1); render(); });
   lines.querySelectorAll('[data-rm]').forEach(b => b.onclick = () => { cart.remove(b.dataset.rm); render(); });
 }
 

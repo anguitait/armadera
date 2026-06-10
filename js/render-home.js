@@ -1,6 +1,6 @@
 // js/render-home.js — pinta los productos destacados
 import { products } from './products.js';
-const clp = n => '$' + n.toLocaleString('es-CL');
+import { clp } from './format.js';
 
 export function renderHome() {
   const cont = document.getElementById('destacados');

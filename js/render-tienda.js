@@ -1,6 +1,6 @@
 // js/render-tienda.js — pinta la grilla completa
 import { products } from './products.js';
-const clp = n => '$' + n.toLocaleString('es-CL');
+import { clp } from './format.js';
 
 export function renderTienda() {
   const cont = document.getElementById('grilla');

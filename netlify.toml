@@ -4,7 +4,3 @@
 
 [functions]
   node_bundler = "esbuild"
-
-[[redirects]]
-  from = "/.netlify/functions/*"
-  status = 200

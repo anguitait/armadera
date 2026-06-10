@@ -10,8 +10,10 @@ export async function startCheckout(items, deps) {
   });
   if (!res.ok) throw new Error('No se pudo iniciar el pago. Intenta de nuevo.');
 
-  const data = await res.json();
-  if (!data.init_point) throw new Error('No se pudo iniciar el pago. Intenta de nuevo.');
+  let data;
+  try { data = await res.json(); }
+  catch { throw new Error('No se pudo iniciar el pago. Intenta de nuevo.'); }
+  if (!data || !data.init_point) throw new Error('No se pudo iniciar el pago. Intenta de nuevo.');
   redirect(data.init_point);
   return data.init_point;
 }

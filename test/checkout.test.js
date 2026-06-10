@@ -35,3 +35,11 @@ test('lanza error si el carrito está vacío', async () => {
     /carrito está vacío/,
   );
 });
+
+test('lanza error amistoso si la respuesta 200 trae JSON malformado', async () => {
+  const fetchImpl = async () => ({ ok: true, json: async () => { throw new Error('Unexpected end of JSON input'); } });
+  await assert.rejects(
+    () => startCheckout([{ slug: 'tipi', qty: 1 }], { fetchImpl, endpoint: '/x', redirect: () => {} }),
+    /No se pudo iniciar el pago/,
+  );
+});
