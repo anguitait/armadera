@@ -13,6 +13,7 @@ test('cada producto tiene los campos requeridos y tipos correctos', () => {
     assert.ok(typeof p.nombre === 'string' && p.nombre.length > 0, `nombre inválido en ${p.slug}`);
     assert.ok(Number.isInteger(p.precio) && p.precio > 0, `precio inválido en ${p.slug}`);
     assert.ok(typeof p.descripcion === 'string' && p.descripcion.length > 0, `descripcion inválida en ${p.slug}`);
+    assert.ok(typeof p.edad === 'string' && p.edad.length > 0, `edad inválida en ${p.slug}`);
     assert.ok(Array.isArray(p.imagenes) && p.imagenes.length > 0, `imagenes inválidas en ${p.slug}`);
     assert.equal(typeof p.destacado, 'boolean', `destacado inválido en ${p.slug}`);
     assert.equal(typeof p.stock, 'boolean', `stock inválido en ${p.slug}`);
@@ -25,7 +26,9 @@ test('los slugs son únicos', () => {
 });
 
 test('getProduct devuelve el producto correcto o undefined', () => {
-  assert.equal(getProduct('tipi').nombre, 'Tipi');
+  const tipi = getProduct('tipi');
+  assert.ok(tipi, 'getProduct debería encontrar "tipi"');
+  assert.equal(tipi.nombre, 'Tipi');
   assert.equal(getProduct('no-existe'), undefined);
 });
 
