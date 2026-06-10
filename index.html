@@ -3,218 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Armadera — Sitio en construcción</title>
-<meta name="description" content="Armadera · Juegos + Diseño. Estamos construyendo algo nuevo. Vuelve pronto.">
-<link rel="icon" type="image/png" href="cropped-logo-color-2-01-2.png">
-
-<!-- Open Graph -->
-<meta property="og:title" content="Armadera — Sitio en construcción">
-<meta property="og:description" content="Juegos + Diseño. Estamos armando algo nuevo.">
-<meta property="og:image" content="cropped-logo-color-2-01-2.png">
-<meta property="og:type" content="website">
-
+<title>Armadera — Juegos de madera para crecer jugando</title>
+<meta name="description" content="Armadera · Juegos de madera fabricados en Villarrica para el desarrollo de niñas y niños.">
+<link rel="icon" type="image/png" href="/cropped-logo-color-2-01-2.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<style>
-  :root{
-    --wood:        #c89a5b;
-    --wood-deep:   #a9763a;
-    --teal:        #57bccb;
-    --teal-deep:   #3a9aa9;
-    --yellow:      #f5c518;
-    --ink:         #3a3a3a;
-    --ink-soft:    #6b6258;
-    --cream:       #faf4e9;
-    --cream-deep:  #f1e6d2;
-    --paper:       #fffdf8;
-  }
-
-  *{ margin:0; padding:0; box-sizing:border-box; }
-
-  html{ scroll-behavior:smooth; }
-
-  body{
-    font-family:'Outfit', sans-serif;
-    color:var(--ink);
-    background:
-      radial-gradient(120% 90% at 85% -10%, rgba(87,188,203,.22), transparent 55%),
-      radial-gradient(100% 80% at 0% 110%, rgba(245,197,24,.20), transparent 50%),
-      linear-gradient(160deg, var(--cream) 0%, var(--cream-deep) 100%);
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding:2rem 1.5rem;
-    position:relative;
-    overflow:hidden;
-  }
-
-  /* paper grain */
-  body::after{
-    content:"";
-    position:fixed; inset:0;
-    pointer-events:none;
-    opacity:.05;
-    mix-blend-mode:multiply;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-
-  /* floating decorative blocks (echo the logo's triangles) */
-  .shape{
-    position:fixed;
-    z-index:0;
-    opacity:.85;
-    will-change:transform;
-  }
-  .tri{
-    width:0; height:0;
-    border-style:solid;
-    filter:drop-shadow(0 12px 20px rgba(120,90,40,.18));
-  }
-  .s1{ top:14%; left:8%;  animation:float1 9s ease-in-out infinite; }
-  .s1 .tri{ border-width:34px 0 34px 58px; border-color:transparent transparent transparent var(--teal); }
-  .s2{ bottom:16%; right:11%; animation:float2 11s ease-in-out infinite; }
-  .s2 .tri{ border-width:26px 44px 26px 0; border-color:transparent var(--yellow) transparent transparent; }
-  .s3{ top:22%; right:18%; animation:float3 8s ease-in-out infinite; }
-  .s3 .dot{ width:18px; height:18px; border-radius:5px; background:var(--wood); box-shadow:0 10px 16px rgba(120,90,40,.22); }
-  .s4{ bottom:24%; left:14%; animation:float2 10s ease-in-out infinite; }
-  .s4 .ring{ width:46px; height:46px; border:7px solid var(--teal-deep); border-radius:14px; opacity:.5; }
-  .s5{ top:62%; left:46%; animation:float1 13s ease-in-out infinite; }
-  .s5 .dot{ width:14px; height:14px; border-radius:50%; background:var(--yellow); }
-
-  @keyframes float1{ 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-26px) rotate(8deg)} }
-  @keyframes float2{ 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(22px) rotate(-10deg)} }
-  @keyframes float3{ 0%,100%{transform:translate(0,0) rotate(0)} 50%{transform:translate(-14px,18px) rotate(14deg)} }
-
-  /* card */
-  .card{
-    position:relative;
-    z-index:2;
-    width:min(640px, 100%);
-    background:var(--paper);
-    border-radius:32px;
-    padding:clamp(2.4rem, 6vw, 4rem) clamp(1.8rem, 6vw, 3.6rem);
-    text-align:center;
-    box-shadow:
-      0 1px 0 rgba(255,255,255,.9) inset,
-      0 40px 80px -30px rgba(120,90,40,.45),
-      0 10px 30px -15px rgba(58,58,58,.2);
-    border:1px solid rgba(200,154,91,.25);
-    animation:rise .9s cubic-bezier(.2,.8,.2,1) both;
-  }
-  @keyframes rise{ from{opacity:0; transform:translateY(28px) scale(.98)} to{opacity:1; transform:none} }
-
-  /* top accent bar like the logo triangles */
-  .accent{
-    display:inline-flex; gap:6px; align-items:center;
-    margin-bottom:1.8rem;
-    animation:fade .8s .15s both;
-  }
-  .accent i{ display:block; width:0; height:0; border-style:solid; }
-  .accent .a-teal{ border-width:9px 0 9px 15px; border-color:transparent transparent transparent var(--teal); }
-  .accent .a-yellow{ border-width:9px 15px 9px 0; border-color:transparent var(--yellow) transparent transparent; }
-  .accent .a-wood{ border-width:0 9px 15px 9px; border-color:transparent transparent var(--wood) transparent; }
-
-  .logo{
-    width:min(340px, 78%);
-    height:auto;
-    margin:0 auto 1.6rem;
-    display:block;
-    animation:fade .8s .25s both;
-  }
-
-  .badge{
-    display:inline-block;
-    font-size:.72rem;
-    letter-spacing:.28em;
-    text-transform:uppercase;
-    color:var(--wood-deep);
-    background:linear-gradient(180deg, rgba(245,197,24,.18), rgba(200,154,91,.16));
-    border:1px solid rgba(200,154,91,.4);
-    padding:.5rem 1.1rem;
-    border-radius:100px;
-    margin-bottom:1.6rem;
-    animation:fade .8s .35s both;
-  }
-
-  h1{
-    font-family:'Fraunces', serif;
-    font-optical-sizing:auto;
-    font-weight:600;
-    font-size:clamp(2.1rem, 7vw, 3.3rem);
-    line-height:1.05;
-    letter-spacing:-.015em;
-    color:var(--ink);
-    margin-bottom:1rem;
-    animation:fade .8s .45s both;
-  }
-  h1 em{ font-style:italic; color:var(--teal-deep); }
-
-  p.lead{
-    font-size:clamp(1rem, 2.4vw, 1.15rem);
-    line-height:1.65;
-    color:var(--ink-soft);
-    max-width:42ch;
-    margin:0 auto 2.2rem;
-    animation:fade .8s .55s both;
-  }
-
-  .foot{
-    font-size:.85rem;
-    color:var(--ink-soft);
-    letter-spacing:.02em;
-    animation:fade .8s .75s both;
-  }
-  .foot a{
-    color:var(--teal-deep);
-    text-decoration:none;
-    font-weight:500;
-    border-bottom:2px solid rgba(87,188,203,.4);
-    transition:border-color .25s, color .25s;
-  }
-  .foot a:hover{ color:var(--wood-deep); border-color:var(--wood); }
-
-  @keyframes fade{ from{opacity:0; transform:translateY(12px)} to{opacity:1; transform:none} }
-
-  @media (prefers-reduced-motion: reduce){
-    *{ animation:none !important; }
-  }
-</style>
+<link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-
-  <!-- floating brand shapes -->
-  <div class="shape s1"><div class="tri"></div></div>
-  <div class="shape s2"><div class="tri"></div></div>
-  <div class="shape s3"><div class="dot"></div></div>
-  <div class="shape s4"><div class="ring"></div></div>
-  <div class="shape s5"><div class="dot"></div></div>
-
-  <main class="card">
-    <div class="accent">
-      <i class="a-teal"></i>
-      <i class="a-yellow"></i>
-      <i class="a-wood"></i>
-    </div>
-
-    <img class="logo" src="cropped-logo-color-2-01-2.png" alt="Armadera · Juegos + Diseño">
-
-    <span class="badge">Sitio en construcción</span>
-
-    <h1>Estamos <em>armando</em><br>algo nuevo</h1>
-
-    <p class="lead">
-      Nuestro nuevo sitio está en construcción, pieza por pieza.
-      Muy pronto vas a poder conocer todos nuestros juegos y diseños. ¡Gracias por tu paciencia!
-    </p>
-
-    <p class="foot">
-      ¿Tienes una consulta? Escríbenos a
-      <a href="mailto:hola@armadera.cl">hola@armadera.cl</a>
-    </p>
+  <header id="site-header"></header>
+  <main>
+    <section class="hero container">
+      <h1>Nos haces feliz ver a los niños jugar felices</h1>
+      <p>Juegos de madera fabricados en Villarrica que estimulan la coordinación, la motricidad y la creatividad. 100% biodegradables y amigables con el medioambiente.</p>
+      <a class="btn" href="/tienda.html">Ver la tienda</a>
+    </section>
+    <section class="section container">
+      <h2>Productos destacados</h2>
+      <div class="grid" id="destacados"></div>
+      <p style="margin-top:2rem"><a class="btn btn-wood" href="/tienda.html">Ver todos los productos</a></p>
+    </section>
   </main>
-
+  <footer id="site-footer"></footer>
+  <script type="module">
+    import { mountLayout } from '/js/layout.js';
+    import { renderHome } from '/js/render-home.js';
+    import { mountCart } from '/js/cart-ui.js';
+    mountLayout(); renderHome(); mountCart();
+  </script>
 </body>
 </html>
