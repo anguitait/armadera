@@ -9,3 +9,4 @@ web.archive.org/
 
 node_modules/
 .netlify/
+.env
