@@ -13,7 +13,7 @@ function ensurePanel() {
   const panel = document.createElement('aside');
   panel.className = 'cart-panel'; panel.id = 'cart-panel';
   panel.innerHTML = `
-    <header><h3>Tu carrito</h3><button id="cart-close" class="remove" aria-label="Cerrar">Cerrar ✕</button></header>
+    <header><h3>Tu carrito</h3><button id="cart-close" class="cart-close" aria-label="Cerrar carrito">Cerrar ✕</button></header>
     <div class="lines" id="cart-lines"></div>
     <footer>
       <div class="cart-total"><span>Total</span><span id="cart-total">$0</span></div>
@@ -37,9 +37,10 @@ function render() {
       <div class="cart-line">
         <div><div class="name">${l.nombre}</div>
           <div class="meta">
-            <button class="remove" data-dec="${l.slug}">−</button>${l.qty}
-            <button class="remove" data-inc="${l.slug}">+</button>
-            <button class="remove" data-rm="${l.slug}">eliminar</button>
+            <button class="step" data-dec="${l.slug}" aria-label="Quitar uno">−</button>
+            <span class="qty-num">${l.qty}</span>
+            <button class="step" data-inc="${l.slug}" aria-label="Agregar uno">+</button>
+            <button class="link-rm" data-rm="${l.slug}">eliminar</button>
           </div></div>
         <div class="price">${clp(l.subtotal)}</div>
       </div>`).join('');
