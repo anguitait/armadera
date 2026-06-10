@@ -130,8 +130,9 @@ img{ max-width:100%; display:block; }
 .cta .btn:hover{ background:var(--cream); }
 
 /* ---- Piezas interactivas que se ensamblan (hero) ---- */
-.hero{ position:relative; overflow:hidden; min-height:clamp(440px, 72vh, 640px);
-  display:flex; flex-direction:column; justify-content:center; }
+.hero{ position:relative; overflow:hidden; min-height:clamp(500px, 76vh, 680px);
+  display:flex; flex-direction:column; justify-content:center;
+  padding:clamp(1rem,3vh,2rem) 0 clamp(7.5rem,17vh,10.5rem); }
 .hero > .container{ position:relative; z-index:2; pointer-events:none; }
 .hero > .container .btn{ pointer-events:auto; }
 .pieces-layer{ position:absolute; inset:0; z-index:1; }
