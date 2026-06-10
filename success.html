@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>¡Gracias por tu compra! — Armadera</title>
+<link rel="icon" type="image/png" href="/cropped-logo-color-2-01-2.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header id="site-header"></header>
+  <main class="notice container">
+    <h1>¡Gracias! 🎉</h1>
+    <p>Recibimos tu mensaje/compra. Te contactaremos pronto.</p>
+    <p style="margin-top:1.5rem"><a class="btn" href="/tienda.html">Seguir mirando</a></p>
+  </main>
+  <footer id="site-footer"></footer>
+  <script type="module">
+    import { mountLayout } from '/js/layout.js';
+    import { mountCart } from '/js/cart-ui.js';
+    import { createCart } from '/js/cart.js';
+    // Mercado Pago agrega ?status=... a la back_url. Solo vaciamos el carrito
+    // cuando el pago quedó aprobado; en estado "pending" (p. ej. transferencia
+    // sin confirmar) lo conservamos por si el cliente necesita reintentar.
+    const estado = new URLSearchParams(location.search).get('status');
+    if (estado === null || estado === 'approved') {
+      createCart(window.localStorage).clear();
+    }
+    mountLayout(); mountCart();
+  </script>
+</body>
+</html>

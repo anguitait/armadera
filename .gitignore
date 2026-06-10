@@ -6,3 +6,7 @@ web.archive.org/
 
 # Playwright artefactos
 .playwright-mcp/
+
+node_modules/
+.netlify/
+.env
