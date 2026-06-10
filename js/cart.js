@@ -3,8 +3,10 @@ const KEY = 'armadera_cart';
 
 export function createCart(storage) {
   function read() {
-    try { return JSON.parse(storage.getItem(KEY)) || []; }
-    catch { return []; }
+    try {
+      const parsed = JSON.parse(storage.getItem(KEY));
+      return Array.isArray(parsed) ? parsed : [];
+    } catch { return []; }
   }
   function write(items) { storage.setItem(KEY, JSON.stringify(items)); }
 
@@ -26,15 +28,18 @@ export function createCart(storage) {
     remove(slug) { write(read().filter(i => i.slug !== slug)); },
     clear() { storage.removeItem(KEY); },
     detailed(catalog) {
-      return read().map(i => {
-        const p = catalog.find(c => c.slug === i.slug);
-        return { slug: i.slug, nombre: p.nombre, precio: p.precio, qty: i.qty, subtotal: p.precio * i.qty };
-      });
+      return read()
+        .map(i => {
+          const p = catalog.find(c => c.slug === i.slug);
+          if (!p) return null;
+          return { slug: i.slug, nombre: p.nombre, precio: p.precio, qty: i.qty, subtotal: p.precio * i.qty };
+        })
+        .filter(Boolean);
     },
     total(catalog) {
       return read().reduce((sum, i) => {
         const p = catalog.find(c => c.slug === i.slug);
-        return sum + p.precio * i.qty;
+        return p ? sum + p.precio * i.qty : sum;
       }, 0);
     },
   };

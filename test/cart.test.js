@@ -69,3 +69,20 @@ test('clear vacía el carrito', () => {
   cart.clear();
   assert.deepEqual(cart.items(), []);
 });
+
+test('detailed y total ignoran slugs ausentes del catálogo', () => {
+  cart.add('tipi', 1);
+  cart.add('producto-retirado', 3);
+  assert.deepEqual(cart.detailed(catalog), [
+    { slug: 'tipi', nombre: 'Tipi', precio: 70000, qty: 1, subtotal: 70000 },
+  ]);
+  assert.equal(cart.total(catalog), 70000);
+});
+
+test('read tolera storage corrupto o no-arreglo', () => {
+  const storage = fakeStorage();
+  storage.setItem('armadera_cart', '42');        // JSON válido pero no es arreglo
+  assert.deepEqual(createCart(storage).items(), []);
+  storage.setItem('armadera_cart', '{no json');  // JSON inválido
+  assert.deepEqual(createCart(storage).items(), []);
+});
