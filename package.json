@@ -1,0 +1,16 @@
+{
+  "name": "armadera",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "node --test",
+    "dev": "netlify dev"
+  },
+  "dependencies": {
+    "mercadopago": "^2.0.15"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  }
+}
