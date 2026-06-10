@@ -34,6 +34,30 @@ const ANIMALS = {
     { shape: 'circle', color: 'woodDeep', size: 14, dx: 24,  dy: -6,  rot: 0 },    // ojo
     { shape: 'circle', color: 'yellow',   size: 14, dx: 42,  dy: -10, rot: 0 },    // burbuja
   ],
+  tortuga: [
+    { shape: 'circle', color: 'wood',     size: 60, dx: 0,   dy: -4,  rot: 0 },    // caparazón
+    { shape: 'tri',    color: 'yellow',   size: 26, dx: 0,   dy: -26, rot: 0 },    // dibujo del caparazón
+    { shape: 'circle', color: 'teal',     size: 28, dx: 38,  dy: -2,  rot: 0 },    // cabeza
+    { shape: 'tri',    color: 'woodDeep', size: 22, dx: 22,  dy: 28,  rot: 180 },  // pata delantera
+    { shape: 'tri',    color: 'woodDeep', size: 22, dx: -22, dy: 28,  rot: 180 },  // pata trasera
+    { shape: 'tri',    color: 'yellow',   size: 18, dx: -40, dy: 6,   rot: -90 },  // cola
+  ],
+  conejo: [
+    { shape: 'circle', color: 'wood',     size: 52, dx: 0,   dy: 18,  rot: 0 },    // cuerpo
+    { shape: 'circle', color: 'yellow',   size: 18, dx: -34, dy: 22,  rot: 0 },    // cola
+    { shape: 'circle', color: 'wood',     size: 40, dx: 0,   dy: -22, rot: 0 },    // cabeza
+    { shape: 'tri',    color: 'wood',     size: 22, dx: -12, dy: -58, rot: 0 },    // oreja izq
+    { shape: 'tri',    color: 'wood',     size: 22, dx: 12,  dy: -58, rot: 0 },    // oreja der
+    { shape: 'circle', color: 'tealDeep', size: 12, dx: 0,   dy: -20, rot: 0 },    // nariz
+  ],
+  perro: [
+    { shape: 'circle', color: 'teal',     size: 54, dx: 0,   dy: 14,  rot: 0 },    // cuerpo
+    { shape: 'tri',    color: 'teal',     size: 26, dx: -38, dy: 4,   rot: -60 },  // cola
+    { shape: 'circle', color: 'teal',     size: 38, dx: 30,  dy: -20, rot: 0 },    // cabeza
+    { shape: 'tri',    color: 'woodDeep', size: 26, dx: 16,  dy: -40, rot: 160 },  // oreja
+    { shape: 'circle', color: 'woodDeep', size: 16, dx: 50,  dy: -16, rot: 0 },    // hocico
+    { shape: 'tri',    color: 'wood',     size: 20, dx: 6,   dy: 40,  rot: 180 },  // pata
+  ],
 };
 const KEYS = Object.keys(ANIMALS);
 
@@ -66,6 +90,7 @@ export function mountHeroPieces() {
   hero.appendChild(reset);
 
   let items = [];
+  let figCount = 1;
   let W = 0, H = 0, scale = 1;
 
   function bounds() {
@@ -74,10 +99,19 @@ export function mountHeroPieces() {
     scale = Math.max(0.62, Math.min(1, W / 760));
   }
 
+  // Ancla de cada figura (en la franja inferior, enmarcando el texto centrado).
+  function anchor(fig) {
+    const ay = H - 104 * scale;
+    if (figCount === 1) return { ax: W >= 820 ? W * 0.74 : W * 0.5, ay };
+    return { ax: fig === 0 ? W * 0.24 : W * 0.76, ay };
+  }
+
   function targets() {
-    const ax = W >= 820 ? W * 0.76 : W * 0.5;   // a la derecha en desktop, centrado en móvil
-    const ay = H - 104 * scale;                  // franja inferior, despejada del botón
-    for (const it of items) { it.tx = ax + it.dx * scale; it.ty = ay + it.dy * scale; }
+    for (const it of items) {
+      const a = anchor(it.fig);
+      it.tx = a.ax + it.dx * scale;
+      it.ty = a.ay + it.dy * scale;
+    }
   }
 
   function place(it, x, y) {
@@ -104,24 +138,29 @@ export function mountHeroPieces() {
     hero.classList.remove('armado');
   }
 
-  function build(key = KEYS[Math.floor(Math.random() * KEYS.length)]) {
+  function build() {
     layer.innerHTML = '';
     bounds();
-    items = ANIMALS[key].map(p => {
-      const s = p.size * scale;
-      const slot = document.createElement('div');
-      slot.className = 'slot';
-      slot.style.transform = `rotate(${p.rot}deg)`;
-      slot.innerHTML = shapeSVG(p.shape, s, { fill: COLORS[p.color], outline: true });
-      layer.appendChild(slot);
+    figCount = W >= 560 ? 2 : 1;                                   // dos figuras en desktop, una en móvil
+    const keys = [...KEYS].sort(() => Math.random() - 0.5).slice(0, figCount); // animales distintos al azar
+    items = [];
+    keys.forEach((key, fig) => {
+      for (const p of ANIMALS[key]) {
+        const s = p.size * scale;
+        const slot = document.createElement('div');
+        slot.className = 'slot';
+        slot.style.transform = `rotate(${p.rot}deg)`;
+        slot.innerHTML = shapeSVG(p.shape, s, { fill: COLORS[p.color], outline: true });
+        layer.appendChild(slot);
 
-      const el = document.createElement('div');
-      el.className = 'piece';
-      el.style.transform = `rotate(${p.rot}deg)`;
-      el.innerHTML = shapeSVG(p.shape, s, { fill: COLORS[p.color] });
-      layer.appendChild(el);
+        const el = document.createElement('div');
+        el.className = 'piece';
+        el.style.transform = `rotate(${p.rot}deg)`;
+        el.innerHTML = shapeSVG(p.shape, s, { fill: COLORS[p.color] });
+        layer.appendChild(el);
 
-      return { ...p, el, slot, x: 0, y: 0, vx: 0, vy: 0, tx: 0, ty: 0, placed: false, dragging: false };
+        items.push({ ...p, fig, el, slot, x: 0, y: 0, vx: 0, vy: 0, tx: 0, ty: 0, placed: false, dragging: false });
+      }
     });
     wireDrag();
     scatter();
