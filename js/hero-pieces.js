@@ -103,7 +103,8 @@ export function mountHeroPieces() {
   function anchor(fig) {
     const ay = H - 104 * scale;
     if (figCount === 1) return { ax: W >= 820 ? W * 0.74 : W * 0.5, ay };
-    return { ax: fig === 0 ? W * 0.24 : W * 0.76, ay };
+    if (figCount === 2) return { ax: fig === 0 ? W * 0.24 : W * 0.76, ay };
+    return { ax: W * [0.2, 0.5, 0.8][fig], ay };   // tres: izquierda, centro, derecha
   }
 
   function targets() {
@@ -130,7 +131,7 @@ export function mountHeroPieces() {
       const m = it.size * scale;
       it.x = m + Math.random() * (W - 2 * m);
       it.y = m + Math.random() * (H - 2 * m);
-      const sp = (0.4 + Math.random() * 0.4) * (reduced ? 0 : 1);
+      const sp = (0.2 + Math.random() * 0.22) * (reduced ? 0 : 1);
       const a = Math.random() * Math.PI * 2;
       it.vx = Math.cos(a) * sp; it.vy = Math.sin(a) * sp;
       place(it, it.x, it.y);
@@ -141,7 +142,7 @@ export function mountHeroPieces() {
   function build() {
     layer.innerHTML = '';
     bounds();
-    figCount = W >= 560 ? 2 : 1;                                   // dos figuras en desktop, una en móvil
+    figCount = W >= 900 ? 3 : W >= 560 ? 2 : 1;                    // 3 figuras en desktop ancho, 2 medio, 1 móvil
     const keys = [...KEYS].sort(() => Math.random() - 0.5).slice(0, figCount); // animales distintos al azar
     items = [];
     keys.forEach((key, fig) => {
