@@ -1,0 +1,43 @@
+// js/products.js — fuente única de verdad del catálogo
+export const products = [
+  { slug: 'pajaros-armo-pajaras-pinto', nombre: 'Pájaros Armo, Pájaras Pinto', precio: 35000, edad: 'Desde 3 años',
+    descripcion: 'Pájaros autóctonos de las distintas zonas del país para pintar. Contiene mapa de ubicación y témperas para colorear.',
+    imagenes: ['/img/productos/pajaros-armo-pajaras-pinto.jpg'], destacado: true, stock: true },
+  { slug: 'animales-campo-chileno', nombre: 'Animales del Campo Chileno', precio: 35000, edad: 'Desde 6 meses',
+    descripcion: '13 figuritas con distintos modelos de animales para una estimulación temprana.',
+    imagenes: ['/img/productos/animales-campo-chileno.jpg'], destacado: true, stock: true },
+  { slug: 'suena-con-el-bosque-ideal', nombre: 'Sueña con el Bosque Ideal', precio: 35000, edad: 'Desde 3 años',
+    descripcion: 'Juego que desafía a los niños a aprender y a querer su entorno y naturaleza.',
+    imagenes: ['/img/productos/suena-con-el-bosque-ideal.jpg'], destacado: true, stock: true },
+  { slug: 'acrobatas', nombre: 'Acróbatas', precio: 35000, edad: 'Desde 12 meses',
+    descripcion: 'Este juego desafía el equilibrio y la creatividad.',
+    imagenes: ['/img/productos/acrobatas.jpg'], destacado: true, stock: true },
+  { slug: 'multiforma', nombre: 'Multiforma', precio: 160000, edad: 'Desde 1 año',
+    descripcion: 'Este fabuloso juego propone una estructura de aventura para niñas y niños. Está compuesto de 3 partes: rampla, semicírculo y triángulo.',
+    imagenes: ['/img/productos/multiforma.jpg'], destacado: false, stock: true },
+  { slug: 'equilibrio', nombre: 'Equilibrio', precio: 60000, edad: 'Desde 12 meses',
+    descripcion: 'Favorece el sistema neuromuscular, aumenta la estabilidad del cuerpo, mejora la fuerza de los músculos, aumenta el potencial y rendimiento.',
+    imagenes: ['/img/productos/equilibrio.jpg'], destacado: false, stock: true },
+  { slug: 'tipi', nombre: 'Tipi', precio: 70000, edad: 'Desde 10 meses',
+    descripcion: 'Un versátil refugio para niños y niñas de fácil armado.',
+    imagenes: ['/img/productos/tipi.jpg'], destacado: false, stock: true },
+  { slug: 'semicirculo', nombre: 'Semicírculo', precio: 70000, edad: 'Desde 12 meses',
+    descripcion: 'Este juego es ideal para exploradores y exploradoras.',
+    imagenes: ['/img/productos/semicirculo.jpg'], destacado: false, stock: true },
+  { slug: 'muro-de-escalada-180', nombre: 'Muro de escalada 1.80 × 1.06 m', precio: 270000, edad: 'Todas las edades',
+    descripcion: 'Muro de escalada de 1.80 × 1.06 metros para el desarrollo de la motricidad y la confianza.',
+    imagenes: ['/img/productos/muro-de-escalada-180.jpg'], destacado: false, stock: true },
+  { slug: 'muro-de-escalada-220', nombre: 'Muro de escalada 2.20 × 1.40 m', precio: 360000, edad: 'Todas las edades',
+    descripcion: 'Muro de escalada de 2.20 × 1.40 metros, versión grande para el desarrollo de la motricidad y la confianza.',
+    imagenes: ['/img/productos/muro-de-escalada-220.jpg'], destacado: false, stock: true },
+  { slug: 'triangulo', nombre: 'Triángulo', precio: 80000, edad: 'Desde 12 meses',
+    descripcion: 'Un juego diseñado para escaladores y escaladoras. Práctico para espacios interiores y exteriores.',
+    imagenes: ['/img/productos/triangulo.jpg'], destacado: false, stock: true },
+  { slug: 'rampla', nombre: 'Rampla', precio: 60000, edad: 'Desde 12 meses',
+    descripcion: 'Juego para emplear la destreza que puede ser como muro o resbalín.',
+    imagenes: ['/img/productos/rampla.jpg'], destacado: false, stock: true },
+];
+
+export function getProduct(slug) {
+  return products.find(p => p.slug === slug);
+}
