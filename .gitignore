@@ -10,3 +10,6 @@ web.archive.org/
 node_modules/
 .netlify/
 .env
+
+# Material de origen (fotos/catalogos/logos) — no se publica
+material/
