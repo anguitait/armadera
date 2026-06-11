@@ -7,6 +7,7 @@ export function validateItems(items, catalog) {
   return items.map(i => {
     const p = catalog.find(c => c.slug === i.slug);
     if (!p) throw new Error(`Producto no encontrado: ${i.slug}`);
+    if (p.consultar || p.precio <= 0) throw new Error(`Producto sin precio de venta: ${i.slug}`);
     if (!Number.isInteger(i.qty) || i.qty <= 0) throw new Error(`Cantidad inválida para ${i.slug}`);
     return { slug: p.slug, nombre: p.nombre, precio: p.precio, qty: i.qty };
   });
