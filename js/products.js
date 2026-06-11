@@ -52,7 +52,7 @@ export const products = [
     incluye: ['Triángulo', 'Semicírculo', 'Rampla'],
     favorece: ['Motricidad gruesa', 'Equilibrio', 'Coordinación', 'Estabilidad'],
     materiales: 'Madera (pino y terciado). Soporta hasta 40 kg',
-    imagenes: ['/img/productos/multiforma.jpg'],
+    imagenes: ['/img/productos/multiforma/1.jpg', '/img/productos/multiforma/2.jpg'],
     destacado: false, stock: true,
   },
   {
@@ -84,7 +84,7 @@ export const products = [
     favorece: ['Equilibrio', 'Coordinación', 'Motricidad gruesa', 'Estabilidad'],
     materiales: 'Terciado y pino, terminaciones con aceites naturales. Soporta hasta 40 kg',
     medidas: '54 cm de ancho × 94 cm de largo',
-    imagenes: ['/img/productos/semicirculo.jpg'],
+    imagenes: ['/img/productos/semicirculo/1.jpg', '/img/productos/semicirculo/2.jpg'],
     destacado: false, stock: true,
   },
   {
@@ -117,7 +117,7 @@ export const products = [
     favorece: ['Equilibrio', 'Coordinación', 'Motricidad gruesa', 'Fuerza'],
     materiales: 'Terciado y pino, aceites naturales y tinte verde. Soporta hasta 40 kg',
     medidas: '90 cm de alto × 68 cm de ancho',
-    imagenes: ['/img/productos/triangulo.jpg'],
+    imagenes: ['/img/productos/triangulo/1.jpg'],
     destacado: false, stock: true,
   },
   {
@@ -128,7 +128,7 @@ export const products = [
     favorece: ['Destreza', 'Equilibrio', 'Coordinación', 'Motricidad gruesa'],
     materiales: 'Terciado y pino, aceites naturales y tinte verde. Soporta hasta 40 kg',
     medidas: '100 cm de largo × 38 cm de ancho',
-    imagenes: ['/img/productos/rampla.jpg'],
+    imagenes: ['/img/productos/rampla/1.jpg', '/img/productos/rampla/2.jpg'],
     destacado: false, stock: true,
   },
   {
@@ -138,7 +138,7 @@ export const products = [
     incluye: ['Base en forma de delfín', 'Piezas redondas de madera para equilibrar'],
     favorece: ['Inicio del lenguaje e imitación', 'Motricidad fina', 'Imaginación', 'Coordinación', 'Equilibrio'],
     materiales: 'Pino, terminaciones con aceites naturales',
-    imagenes: ['/img/productos/placeholder.svg'],
+    imagenes: ['/img/productos/delfin-pez/1.jpg', '/img/productos/delfin-pez/2.jpg'],
     destacado: false, stock: true,
   },
   {
@@ -148,7 +148,7 @@ export const products = [
     incluye: ['6 herramientas de madera', 'Caja de herramientas'],
     favorece: ['Motricidad fina y gruesa', 'Coordinación', 'Imitación y lenguaje', 'Juego simbólico y uso funcional de objetos'],
     materiales: 'Terciado, terminaciones con aceites naturales',
-    imagenes: ['/img/productos/placeholder.svg'],
+    imagenes: ['/img/productos/herramientas/1.jpg', '/img/productos/herramientas/2.jpg'],
     destacado: false, stock: true,
   },
   {
@@ -158,7 +158,7 @@ export const products = [
     incluye: ['Zapato de madera con perforaciones', 'Cordón'],
     favorece: ['Motricidad fina', 'Coordinación', 'Concentración'],
     materiales: 'Pino, terminaciones con aceites naturales',
-    imagenes: ['/img/productos/placeholder.svg'],
+    imagenes: ['/img/productos/zapatito/1.jpg'],
     destacado: false, stock: true,
   },
   {
@@ -168,7 +168,7 @@ export const products = [
     incluye: ['Oveja de madera', 'Aguja de madera', 'Lana'],
     favorece: ['Motricidad fina', 'Coordinación', 'Concentración'],
     materiales: 'Pino, terminaciones con aceites naturales',
-    imagenes: ['/img/productos/placeholder.svg'],
+    imagenes: ['/img/productos/ovejita-del-sur/1.jpg', '/img/productos/ovejita-del-sur/2.jpg', '/img/productos/ovejita-del-sur/3.jpg'],
     destacado: false, stock: true,
   },
 ];
