@@ -1,4 +1,4 @@
-// js/render-home.js — pinta los productos destacados
+// js/render-home.js · pinta los productos destacados
 import { products } from './products.js';
 import { productCard } from './product-card.js';
 

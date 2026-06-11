@@ -1,4 +1,4 @@
-// js/products.js — fuente única de verdad del catálogo.
+// js/products.js · fuente única de verdad del catálogo.
 // Datos extraídos de los catálogos oficiales de Armadera (2021 y 2023).
 // Campos: slug, nombre, precio (CLP entero; 0 + consultar:true = "Consultar precio"),
 // edad, descripcion, incluye[], favorece[], materiales, medidas (opcional),
@@ -48,7 +48,7 @@ export const products = [
   {
     slug: 'multiforma', nombre: 'Multiforma', precio: 160000,
     edad: 'Desde 12 meses',
-    descripcion: 'Estructura de aventura para trepar, deslizarse y equilibrarse. Se compone de tres partes —triángulo, semicírculo y rampla— que se combinan de distintas formas.',
+    descripcion: 'Estructura de aventura para trepar, deslizarse y equilibrarse. Se compone de tres partes (triángulo, semicírculo y rampla) que se combinan de distintas formas.',
     incluye: ['Triángulo', 'Semicírculo', 'Rampla'],
     favorece: ['Motricidad gruesa', 'Equilibrio', 'Coordinación', 'Estabilidad'],
     materiales: 'Madera (pino y terciado). Soporta hasta 40 kg',

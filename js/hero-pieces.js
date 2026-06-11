@@ -1,4 +1,4 @@
-// js/hero-pieces.js — piezas decorativas arrastrables que se ensamblan en un animal.
+// js/hero-pieces.js · piezas decorativas arrastrables que se ensamblan en un animal.
 // En cada carga se elige un animal al azar; sus piezas flotan por el hero y al
 // arrastrarlas cerca de su contorno objetivo encajan. Al completarlo se puede
 // "Revolver" para armar otro animal distinto.

@@ -1,4 +1,4 @@
-// js/product-card.js — tarjeta de producto compartida (tienda y home)
+// js/product-card.js · tarjeta de producto compartida (tienda y home)
 import { clp } from './format.js';
 
 export function productCard(p) {

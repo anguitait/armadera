@@ -10,7 +10,9 @@ body{
   font-family:'Outfit',sans-serif; color:var(--ink);
   background:linear-gradient(160deg,var(--cream) 0%,var(--cream-deep) 100%);
   min-height:100vh; line-height:1.6;
+  display:flex; flex-direction:column;        /* footer pegado al fondo en páginas cortas */
 }
+body > main{ flex:1 0 auto; }
 h1,h2,h3{ font-family:'Fraunces',serif; font-optical-sizing:auto; letter-spacing:-.015em; line-height:1.1; }
 a{ color:var(--teal-deep); }
 img{ max-width:100%; display:block; }

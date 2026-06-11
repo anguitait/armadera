@@ -1,4 +1,4 @@
-// js/layout.js — header y footer compartidos
+// js/layout.js · header y footer compartidos
 function headerHTML() {
   return `
   <div class="container">

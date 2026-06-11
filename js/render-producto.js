@@ -1,4 +1,4 @@
-// js/render-producto.js — ficha de producto con galería (miniaturas + lightbox) y detalle.
+// js/render-producto.js · ficha de producto con galería (miniaturas + lightbox) y detalle.
 import { getProduct } from './products.js';
 import { clp } from './format.js';
 
@@ -37,7 +37,7 @@ export function renderProducto() {
     cont.innerHTML = `<div class="notice"><h1>Producto no encontrado</h1><p><a class="btn" href="/tienda.html">Volver a la tienda</a></p></div>`;
     return;
   }
-  document.title = `${p.nombre} — Armadera`;
+  document.title = `${p.nombre} · Armadera`;
   const imgs = p.imagenes;
   const fallback = "this.onerror=null;this.src='/img/productos/placeholder.svg'";
 

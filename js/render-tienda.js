@@ -1,4 +1,4 @@
-// js/render-tienda.js — pinta la grilla completa
+// js/render-tienda.js · pinta la grilla completa
 import { products } from './products.js';
 import { productCard } from './product-card.js';
 
