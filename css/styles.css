@@ -19,7 +19,7 @@ img{ max-width:100%; display:block; }
 /* Header / nav */
 .site-header{ background:var(--paper); border-bottom:1px solid rgba(200,154,91,.25); position:sticky; top:0; z-index:50; }
 .site-header .container{ display:flex; align-items:center; justify-content:space-between; padding:.8rem 0; }
-.site-header .logo img{ height:60px; }
+.site-header .logo img{ height:100px; }
 .site-nav{ display:flex; gap:1.4rem; align-items:center; }
 .site-nav a{ text-decoration:none; color:var(--ink); font-weight:500; }
 .site-nav a:hover{ color:var(--teal-deep); }
