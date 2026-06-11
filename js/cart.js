@@ -1,4 +1,4 @@
-// js/cart.js — lógica pura de carrito, storage inyectado
+// js/cart.js · lógica pura de carrito, storage inyectado
 const KEY = 'armadera_cart';
 
 export function createCart(storage) {

@@ -1,4 +1,4 @@
-// js/cart-ui.js — panel deslizante + badge + botones agregar al carrito
+// js/cart-ui.js · panel deslizante + badge + botones agregar al carrito
 import { products, getProduct } from './products.js';
 import { createCart } from './cart.js';
 import { startCheckout } from './checkout.js';
