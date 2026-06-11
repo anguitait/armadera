@@ -62,6 +62,7 @@ export function renderProducto() {
         ${p.medidas ? `<p class="spec"><strong>Medidas:</strong> ${p.medidas}</p>` : ''}
         <p class="spec"><strong>Materiales:</strong> ${p.materiales}</p>
         ${acciones(p)}
+        <p class="made-note">🪵 Hecho a mano a pedido · coordinamos el despacho contigo</p>
       </div>
     </div>`;
 

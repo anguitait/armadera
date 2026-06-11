@@ -99,6 +99,8 @@ img{ max-width:100%; display:block; }
   color:var(--ink); font-size:.85rem; padding:.35rem .8rem; border-radius:100px; }
 .spec{ color:var(--ink-soft); font-size:.92rem; margin:.5rem 0; }
 .spec strong{ color:var(--ink); }
+.made-note{ margin-top:1rem; font-size:.9rem; color:var(--ink-soft); background:var(--cream-deep);
+  border-radius:12px; padding:.6rem .9rem; display:inline-block; }
 
 /* Lightbox */
 .lightbox{ position:fixed; inset:0; background:rgba(40,36,30,.92); z-index:90; display:flex; align-items:center; justify-content:center; padding:2rem; }
