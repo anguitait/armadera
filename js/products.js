@@ -12,7 +12,7 @@ export const products = [
     incluye: ['6 aves chilenas de madera', 'Guía completa y explicativa de cada ave', 'Témperas', 'Pincel', 'Mezclador / paleta'],
     favorece: ['Motricidad fina', 'Coordinación viso-motriz', 'Trabajo bi-manual', 'Inicio del lenguaje e imitación', 'Concentración y cultura'],
     materiales: 'Terciado, terminaciones con aceites naturales',
-    imagenes: ['/img/productos/pajaros-armo-pajaras-pinto/1.jpg', '/img/productos/pajaros-armo-pajaras-pinto/2.jpg', '/img/productos/pajaros-armo-pajaras-pinto/3.jpg', '/img/productos/pajaros-armo-pajaras-pinto/4.jpg', '/img/productos/pajaros-armo-pajaras-pinto/5.jpg', '/img/productos/pajaros-armo-pajaras-pinto/6.jpg', '/img/productos/pajaros-armo-pajaras-pinto/7.jpg', '/img/productos/pajaros-armo-pajaras-pinto/8.jpg'],
+    imagenes: ['/img/productos/pajaros-armo-pajaras-pinto/1.jpg', '/img/productos/pajaros-armo-pajaras-pinto/2.jpg', '/img/productos/pajaros-armo-pajaras-pinto/3.jpg', '/img/productos/pajaros-armo-pajaras-pinto/4.jpg', '/img/productos/pajaros-armo-pajaras-pinto/5.jpg', '/img/productos/pajaros-armo-pajaras-pinto/6.jpg'],
     destacado: true, stock: true,
   },
   {
@@ -22,7 +22,7 @@ export const products = [
     incluye: ['14 figuras de madera con forma de animales', 'Póster ilustrado con una característica de cada animal'],
     favorece: ['Acción y reacción', 'Motricidad fina', 'Coordinación viso-motriz', 'Inicio del lenguaje e imitación', 'Juego pre simbólico y simbólico'],
     materiales: 'Pino, terminaciones con aceites naturales',
-    imagenes: ['/img/productos/animales-campo-chileno/1.jpg', '/img/productos/animales-campo-chileno/2.jpg', '/img/productos/animales-campo-chileno/3.jpg', '/img/productos/animales-campo-chileno/4.jpg', '/img/productos/animales-campo-chileno/5.jpg', '/img/productos/animales-campo-chileno/6.jpg', '/img/productos/animales-campo-chileno/7.jpg', '/img/productos/animales-campo-chileno/8.jpg'],
+    imagenes: ['/img/productos/animales-campo-chileno/1.jpg', '/img/productos/animales-campo-chileno/2.jpg', '/img/productos/animales-campo-chileno/3.jpg', '/img/productos/animales-campo-chileno/4.jpg', '/img/productos/animales-campo-chileno/5.jpg'],
     destacado: false, stock: true,
   },
   {
@@ -32,7 +32,7 @@ export const products = [
     incluye: ['11 timbres de animales del bosque chileno', 'Guía con información de cada animal', '3 láminas para timbrar y pintar', 'Lápices', 'Tinta para timbres'],
     favorece: ['Motricidad fina', 'Coordinación viso-motriz', 'Trabajo bi-manual', 'Inicio del lenguaje e imitación', 'Conexión con la naturaleza'],
     materiales: 'Madera, terminaciones con aceites naturales',
-    imagenes: ['/img/productos/suena-con-el-bosque-ideal/1.jpg', '/img/productos/suena-con-el-bosque-ideal/2.jpg', '/img/productos/suena-con-el-bosque-ideal/3.jpg', '/img/productos/suena-con-el-bosque-ideal/4.jpg', '/img/productos/suena-con-el-bosque-ideal/5.jpg', '/img/productos/suena-con-el-bosque-ideal/6.jpg', '/img/productos/suena-con-el-bosque-ideal/7.jpg', '/img/productos/suena-con-el-bosque-ideal/8.jpg'],
+    imagenes: ['/img/productos/suena-con-el-bosque-ideal/1.jpg', '/img/productos/suena-con-el-bosque-ideal/2.jpg', '/img/productos/suena-con-el-bosque-ideal/3.jpg', '/img/productos/suena-con-el-bosque-ideal/4.jpg', '/img/productos/suena-con-el-bosque-ideal/5.jpg', '/img/productos/suena-con-el-bosque-ideal/6.jpg'],
     destacado: true, stock: true,
   },
   {
@@ -42,7 +42,7 @@ export const products = [
     incluye: ['9 figuras de acróbatas', 'Stickers para personalizarlos', 'Guía "¿Cómo equilibrar a tus acróbatas?"'],
     favorece: ['Inicio del lenguaje e imitación', 'Motricidad fina', 'Imaginación', 'Coordinación', 'Equilibrio'],
     materiales: 'Pino, terminaciones con aceites naturales',
-    imagenes: ['/img/productos/acrobatas/1.jpg', '/img/productos/acrobatas/2.jpg', '/img/productos/acrobatas/3.jpg', '/img/productos/acrobatas/4.jpg', '/img/productos/acrobatas/5.jpg', '/img/productos/acrobatas/6.jpg', '/img/productos/acrobatas/7.jpg', '/img/productos/acrobatas/8.jpg'],
+    imagenes: ['/img/productos/acrobatas/1.jpg', '/img/productos/acrobatas/2.jpg', '/img/productos/acrobatas/3.jpg', '/img/productos/acrobatas/4.jpg', '/img/productos/acrobatas/5.jpg'],
     destacado: true, stock: true,
   },
   {
@@ -52,7 +52,7 @@ export const products = [
     incluye: ['Triángulo', 'Semicírculo', 'Rampla'],
     favorece: ['Motricidad gruesa', 'Equilibrio', 'Coordinación', 'Estabilidad'],
     materiales: 'Madera (pino y terciado). Soporta hasta 40 kg',
-    imagenes: ['/img/productos/multiforma/1.jpg', '/img/productos/multiforma/2.jpg'],
+    imagenes: ['/img/productos/multiforma/1.jpg', '/img/productos/multiforma/2.jpg', '/img/productos/multiforma/3.jpg', '/img/productos/multiforma/4.jpg'],
     destacado: false, stock: true,
   },
   {
@@ -73,7 +73,7 @@ export const products = [
     favorece: ['Acción y reacción', 'Gateo', 'Marcha', 'Juego simbólico'],
     materiales: 'Terciado, terminaciones con aceites naturales',
     medidas: '94 cm de alto × 30 cm de ancho · base 76 × 76 cm',
-    imagenes: ['/img/productos/tipi/1.jpg', '/img/productos/tipi/2.jpg', '/img/productos/tipi/3.jpg', '/img/productos/tipi/4.jpg', '/img/productos/tipi/5.jpg', '/img/productos/tipi/6.jpg', '/img/productos/tipi/7.jpg', '/img/productos/tipi/8.jpg'],
+    imagenes: ['/img/productos/tipi/1.jpg', '/img/productos/tipi/2.jpg', '/img/productos/tipi/3.jpg', '/img/productos/tipi/4.jpg', '/img/productos/tipi/5.jpg'],
     destacado: false, stock: true,
   },
   {
@@ -84,7 +84,7 @@ export const products = [
     favorece: ['Equilibrio', 'Coordinación', 'Motricidad gruesa', 'Estabilidad'],
     materiales: 'Terciado y pino, terminaciones con aceites naturales. Soporta hasta 40 kg',
     medidas: '54 cm de ancho × 94 cm de largo',
-    imagenes: ['/img/productos/semicirculo/1.jpg', '/img/productos/semicirculo/2.jpg'],
+    imagenes: ['/img/productos/semicirculo/1.jpg', '/img/productos/semicirculo/2.jpg', '/img/productos/semicirculo/3.jpg'],
     destacado: false, stock: true,
   },
   {
@@ -117,7 +117,7 @@ export const products = [
     favorece: ['Equilibrio', 'Coordinación', 'Motricidad gruesa', 'Fuerza'],
     materiales: 'Terciado y pino, aceites naturales y tinte verde. Soporta hasta 40 kg',
     medidas: '90 cm de alto × 68 cm de ancho',
-    imagenes: ['/img/productos/triangulo/1.jpg'],
+    imagenes: ['/img/productos/triangulo/1.jpg', '/img/productos/triangulo/2.jpg'],
     destacado: false, stock: true,
   },
   {
@@ -138,7 +138,7 @@ export const products = [
     incluye: ['Base en forma de delfín', 'Piezas redondas de madera para equilibrar'],
     favorece: ['Inicio del lenguaje e imitación', 'Motricidad fina', 'Imaginación', 'Coordinación', 'Equilibrio'],
     materiales: 'Pino, terminaciones con aceites naturales',
-    imagenes: ['/img/productos/delfin-pez/1.jpg', '/img/productos/delfin-pez/2.jpg'],
+    imagenes: ['/img/productos/delfin-pez/1.jpg', '/img/productos/delfin-pez/2.jpg', '/img/productos/delfin-pez/3.jpg', '/img/productos/delfin-pez/4.jpg'],
     destacado: false, stock: true,
   },
   {
