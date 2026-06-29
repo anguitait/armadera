@@ -18,7 +18,7 @@ function footerHTML() {
     <div><strong>Armadera</strong><br>Villarrica, Región de la Araucanía, Chile</div>
     <div>
       <a href="mailto:hola@armadera.cl">hola@armadera.cl</a><br>
-      +56 9 6593 2938 · +56 9 8548 8233<br>
+      +56 9 8548 8233<br>
       <a href="https://www.instagram.com/armadera_/" target="_blank" rel="noopener">@armadera_</a>
     </div>
   </div>`;
