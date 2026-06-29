@@ -12,7 +12,7 @@ export const products = [
     incluye: ['6 aves chilenas de madera', 'Guía completa y explicativa de cada ave', 'Témperas', 'Pincel', 'Mezclador / paleta'],
     favorece: ['Motricidad fina', 'Coordinación viso-motriz', 'Trabajo bi-manual', 'Inicio del lenguaje e imitación', 'Concentración y cultura'],
     materiales: 'Terciado, terminaciones con aceites naturales',
-    imagenes: ['/img/productos/pajaros-armo-pajaras-pinto/1.jpg', '/img/productos/pajaros-armo-pajaras-pinto/2.jpg', '/img/productos/pajaros-armo-pajaras-pinto/3.jpg', '/img/productos/pajaros-armo-pajaras-pinto/4.jpg', '/img/productos/pajaros-armo-pajaras-pinto/5.jpg', '/img/productos/pajaros-armo-pajaras-pinto/6.jpg'],
+    imagenes: ['/img/productos/pajaros-armo-pajaras-pinto/5.jpg', '/img/productos/pajaros-armo-pajaras-pinto/2.jpg', '/img/productos/pajaros-armo-pajaras-pinto/3.jpg', '/img/productos/pajaros-armo-pajaras-pinto/4.jpg', '/img/productos/pajaros-armo-pajaras-pinto/1.jpg', '/img/productos/pajaros-armo-pajaras-pinto/6.jpg'],
     destacado: true, stock: true,
   },
   {
@@ -42,7 +42,7 @@ export const products = [
     incluye: ['9 figuras de acróbatas', 'Stickers para personalizarlos', 'Guía "¿Cómo equilibrar a tus acróbatas?"'],
     favorece: ['Inicio del lenguaje e imitación', 'Motricidad fina', 'Imaginación', 'Coordinación', 'Equilibrio'],
     materiales: 'Pino, terminaciones con aceites naturales',
-    imagenes: ['/img/productos/acrobatas/1.jpg', '/img/productos/acrobatas/2.jpg', '/img/productos/acrobatas/3.jpg', '/img/productos/acrobatas/4.jpg', '/img/productos/acrobatas/5.jpg', '/img/productos/acrobatas/6.jpg'],
+    imagenes: ['/img/productos/acrobatas/3.jpg', '/img/productos/acrobatas/2.jpg', '/img/productos/acrobatas/1.jpg', '/img/productos/acrobatas/4.jpg', '/img/productos/acrobatas/5.jpg', '/img/productos/acrobatas/6.jpg'],
     destacado: true, stock: true,
   },
   {
@@ -138,7 +138,7 @@ export const products = [
     incluye: ['Base en forma de delfín', 'Piezas redondas de madera para equilibrar'],
     favorece: ['Inicio del lenguaje e imitación', 'Motricidad fina', 'Imaginación', 'Coordinación', 'Equilibrio'],
     materiales: 'Pino, terminaciones con aceites naturales',
-    imagenes: ['/img/productos/delfin-pez/1.jpg', '/img/productos/delfin-pez/2.jpg', '/img/productos/delfin-pez/3.jpg'],
+    imagenes: ['/img/productos/delfin-pez/1.jpg', '/img/productos/delfin-pez/2.jpg'],
     destacado: false, stock: true,
   },
   {
